@@ -1,0 +1,36 @@
+
+{
+  "name": "healthcare-monitoring-system",
+  "version": "1.0.0",
+  "description": "A healthcare monitoring system with React frontend and Node.js backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "build": "npm run build --prefix client",
+    "heroku-postbuild": "npm run install-client && npm run build"
+  },
+  "keywords": [
+    "healthcare",
+    "monitoring",
+    "mern",
+    "react",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
